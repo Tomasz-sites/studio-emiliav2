@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Emilia — Fryzjer & Barber Shop Katowice</title>
+<meta name="description" content="Studio Emilia Katowice – fryzjer & barber shop przy ul. Wojciecha 3. Strzyżenie od 50 zł, koloryzacja, Air Touch, laminacja włosów. 4,9★ z 331 opinii.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F7F4EF;
+  --bg2:#EFEBE3;
+  --dark:#1A1612;
+  --accent:#2D6A4F;
+  --accent2:#52B788;
+  --muted:#8C8478;
+  --border:rgba(26,22,18,0.1);
+  --white:#FDFCFA;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.4rem 4rem;
+  background:rgba(247,244,239,0.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Cormorant',serif;
+  font-size:1.2rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--dark);text-decoration:none;
+}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{
+  font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover{color:var(--dark);}
+.nav-cta{
+  font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.65rem 1.6rem;
+  background:var(--accent);color:var(--white);
+  text-decoration:none;transition:background .2s;
+}
+.nav-cta:hover{background:var(--dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--dark);}
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:var(--bg);z-index:200;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{
+  font-family:'Cormorant',serif;font-size:2rem;
+  color:var(--dark);text-decoration:none;font-style:italic;
+}
+.mobile-menu .close-btn{
+  position:absolute;top:1.5rem;right:2rem;
+  font-size:1.5rem;cursor:pointer;background:none;border:none;color:var(--dark);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:80px;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 4rem 6rem 5rem;
+}
+.hero-eyebrow{
+  font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:2rem;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{
+  content:'';width:40px;height:1px;background:var(--accent);
+}
+.hero-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(3rem,5vw,5rem);
+  font-weight:300;line-height:1.05;
+  color:var(--dark);margin-bottom:1.5rem;
+}
+.hero-title em{font-style:italic;color:var(--accent);}
+.hero-sub{
+  font-size:0.9rem;line-height:1.9;color:var(--muted);
+  max-width:360px;margin-bottom:2.5rem;
+}
+.hero-rating{
+  display:flex;align-items:center;gap:0.8rem;
+  margin-bottom:2.5rem;padding:1rem 0;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.stars{color:var(--accent);letter-spacing:2px;font-size:0.85rem;}
+.rating-text{font-size:0.8rem;color:var(--muted);}
+.rating-num{font-weight:500;color:var(--dark);}
+.btn-primary{
+  display:inline-block;
+  background:var(--accent);color:var(--white);
+  padding:1rem 2.5rem;text-decoration:none;
+  font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
+  transition:background .2s,transform .15s;align-self:flex-start;
+}
+.btn-primary:hover{background:var(--dark);transform:translateY(-1px);}
+.btn-secondary{
+  display:inline-block;margin-left:1.5rem;
+  color:var(--dark);text-decoration:none;
+  font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);padding-bottom:2px;
+  transition:border-color .2s,color .2s;
+}
+.btn-secondary:hover{color:var(--accent);border-color:var(--accent);}
+
+/* HERO RIGHT — SVG illustration */
+.hero-right{
+  background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-illustration{width:80%;max-width:420px;}
+
+/* MARQUEE */
+.marquee-wrap{
+  background:var(--dark);padding:0.9rem 0;overflow:hidden;
+}
+.marquee-track{
+  display:flex;gap:4rem;white-space:nowrap;
+  animation:marquee 22s linear infinite;
+  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(253,252,250,0.35);
+}
+.marquee-track span{color:rgba(253,252,250,0.7);}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SERVICES */
+.services{
+  padding:8rem 5rem;
+  background:var(--white);
+}
+.section-label{
+  font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1rem;
+}
+.section-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(2rem,3.5vw,3rem);font-weight:300;
+  color:var(--dark);line-height:1.1;margin-bottom:4rem;
+}
+.section-title em{font-style:italic;}
+
+.services-tabs{
+  display:flex;gap:0;
+  border-bottom:1px solid var(--border);
+  margin-bottom:3rem;
+}
+.tab-btn{
+  background:none;border:none;cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);padding:0.9rem 2rem;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .2s,border-color .2s;
+}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.tab-btn:hover{color:var(--dark);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.price-list{display:flex;flex-direction:column;}
+.price-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 0;border-bottom:1px solid var(--border);
+  transition:padding-left .2s;
+}
+.price-item:hover{padding-left:0.5rem;}
+.price-name{font-size:0.88rem;color:var(--dark);}
+.price-val{
+  font-family:'Cormorant',serif;
+  font-size:1.1rem;color:var(--accent);
+  white-space:nowrap;margin-left:1rem;
+}
+
+/* NUMBERS STRIP */
+.numbers{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--accent);
+}
+.number-item{
+  padding:4rem 3rem;
+  border-right:1px solid rgba(253,252,250,0.15);
+  text-align:center;
+}
+.number-item:last-child{border-right:none;}
+.number-big{
+  font-family:'Cormorant',serif;
+  font-size:3.5rem;font-weight:300;color:var(--white);
+  line-height:1;margin-bottom:0.5rem;
+  display:block;
+}
+.number-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,252,250,0.6);}
+
+/* ABOUT */
+.about{
+  padding:8rem 5rem;
+  background:var(--bg);
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;
+}
+.about-visual{
+  display:flex;align-items:center;justify-content:center;
+}
+.about-svg{width:100%;max-width:380px;}
+.about-text{}
+.about-body{
+  font-size:0.9rem;line-height:1.9;color:var(--muted);
+  margin-bottom:1.5rem;
+}
+.about-detail{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1rem 0;border-top:1px solid var(--border);
+}
+.about-detail-icon{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
+.about-detail-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.2rem;}
+.about-detail-text{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.about-detail-text a{color:var(--muted);text-decoration:none;transition:color .2s;}
+.about-detail-text a:hover{color:var(--accent);}
+
+/* REVIEWS */
+.reviews{
+  padding:8rem 5rem;
+  background:var(--white);
+}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2rem;margin-top:4rem;
+}
+.review-card{
+  padding:2rem;
+  border:1px solid var(--border);
+  transition:border-color .2s,transform .2s;
+}
+.review-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+.review-accent{
+  width:24px;height:2px;
+  background:var(--accent);margin-bottom:1.5rem;
+}
+.review-text{
+  font-family:'Cormorant',serif;
+  font-size:1.05rem;font-style:italic;
+  color:var(--dark);line-height:1.8;margin-bottom:1.5rem;
+}
+.review-author{font-size:0.72rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+
+/* CTA */
+.cta{
+  padding:8rem 5rem;text-align:center;
+  background:var(--dark);
+  position:relative;overflow:hidden;
+}
+.cta-bg-circle{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(82,183,136,0.1);
+  pointer-events:none;
+}
+.cta-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(2.5rem,5vw,4rem);font-weight:300;
+  color:var(--white);margin-bottom:1rem;
+  position:relative;
+}
+.cta-title em{font-style:italic;color:var(--accent2);}
+.cta-sub{font-size:0.88rem;color:rgba(253,252,250,0.45);margin-bottom:3rem;position:relative;}
+.cta-btn{
+  display:inline-block;
+  background:var(--accent);color:var(--white);
+  padding:1.1rem 3rem;text-decoration:none;
+  font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;
+  transition:background .2s,transform .15s;position:relative;
+}
+.cta-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+.cta-phone{
+  display:block;margin-top:1.5rem;
+  font-size:0.78rem;color:rgba(253,252,250,0.3);position:relative;
+}
+.cta-phone a{color:rgba(253,252,250,0.5);text-decoration:none;transition:color .2s;}
+.cta-phone a:hover{color:var(--accent2);}
+
+/* FOOTER */
+footer{
+  background:var(--dark);border-top:1px solid rgba(253,252,250,0.08);
+  padding:2rem 5rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.7rem;color:rgba(253,252,250,0.25);
+}
+footer a{color:rgba(253,252,250,0.25);text-decoration:none;transition:color .2s;}
+footer a:hover{color:var(--accent2);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.12s;}
+.reveal-delay-2{transition-delay:.24s;}
+.reveal-delay-3{transition-delay:.36s;}
+
+@media(max-width:768px){
+  nav{padding:1.1rem 1.5rem;}
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:3.5rem 1.5rem 2.5rem;}
+  .hero-right{min-height:280px;padding:2rem;}
+  .services,.reviews,.about,.cta{padding:4rem 1.5rem;}
+  .about{grid-template-columns:1fr;gap:2rem;}
+  .about-visual{display:none;}
+  .numbers{grid-template-columns:1fr;}
+  .number-item{border-right:none;border-bottom:1px solid rgba(253,252,250,0.15);padding:3rem 2rem;}
+  .reviews-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem;}
+  .services-tabs{overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Studio Emilia</a>
+  <ul class="nav-links">
+    <li><a href="#uslugi">Usługi</a></li>
+    <li><a href="#opinie">Opinie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="https://booksy.com/pl-pl/85546_studio-emilia-fryzjer-barber-shop_fryzjer_11597_katowice" target="_blank" class="nav-cta">Zarezerwuj</a>
+  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mob">
+  <button class="close-btn" onclick="document.getElementById('mob').classList.remove('open')">✕</button>
+  <a href="#uslugi" onclick="document.getElementById('mob').classList.remove('open')">Usługi</a>
+  <a href="#opinie" onclick="document.getElementById('mob').classList.remove('open')">Opinie</a>
+  <a href="#kontakt" onclick="document.getElementById('mob').classList.remove('open')">Kontakt</a>
+  <a href="https://booksy.com/pl-pl/85546_studio-emilia-fryzjer-barber-shop_fryzjer_11597_katowice" target="_blank" style="font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;font-family:Outfit,sans-serif;font-style:normal;background:var(--accent);color:var(--white);padding:0.8rem 2rem;">Zarezerwuj</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Fryzjer & Barber · Katowice</p>
+    <h1 class="hero-title">Sztuka<br>pięknych<br><em>włosów</em></h1>
+    <p class="hero-sub">Profesjonalne strzyżenie, koloryzacja i zabiegi pielęgnacyjne. Umów się online w kilka sekund.</p>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span class="rating-text"><span class="rating-num">4,9</span> · 331 opinii na Booksy</span>
+    </div>
+    <div>
+      <a href="https://booksy.com/pl-pl/85546_studio-emilia-fryzjer-barber-shop_fryzjer_11597_katowice" target="_blank" class="btn-primary">Zarezerwuj online</a>
+      <a href="#uslugi" class="btn-secondary">Zobacz usługi</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- SVG Illustration - scissors + abstract hair shapes -->
+    <svg class="hero-illustration" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background circle -->
+      <circle cx="200" cy="210" r="160" stroke="#2D6A4F" stroke-width="1" stroke-dasharray="8 8" opacity="0.3">
+        <animateTransform attributeName="transform" type="rotate" from="0 200 210" to="360 200 210" dur="40s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="210" r="120" stroke="#2D6A4F" stroke-width="0.5" opacity="0.2"/>
+
+      <!-- Abstract hair strands -->
+      <path d="M140 80 C160 120 130 160 150 200 C170 240 140 280 160 320" stroke="#2D6A4F" stroke-width="2" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M140 80 C160 120 130 160 150 200 C170 240 140 280 160 320;M140 80 C155 125 135 155 148 200 C162 245 145 275 158 320;M140 80 C160 120 130 160 150 200 C170 240 140 280 160 320" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M170 70 C185 115 165 155 178 200 C191 245 170 285 182 325" stroke="#2D6A4F" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M170 70 C185 115 165 155 178 200 C191 245 170 285 182 325;M170 70 C180 118 168 152 176 200 C184 248 172 282 180 325;M170 70 C185 115 165 155 178 200 C191 245 170 285 182 325" dur="5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M200 65 C210 112 195 152 205 200 C215 248 198 288 208 328" stroke="#52B788" stroke-width="3" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M200 65 C210 112 195 152 205 200 C215 248 198 288 208 328;M200 65 C205 115 198 150 203 200 C208 250 200 285 205 328;M200 65 C210 112 195 152 205 200 C215 248 198 288 208 328" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M230 70 C215 115 235 155 222 200 C209 245 230 285 218 325" stroke="#2D6A4F" stroke-width="2.5" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M230 70 C215 115 235 155 222 200 C209 245 230 285 218 325;M230 70 C220 118 232 152 224 200 C216 248 228 282 220 325;M230 70 C215 115 235 155 222 200 C209 245 230 285 218 325" dur="4.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M258 80 C240 122 262 162 248 202 C234 242 256 282 242 322" stroke="#2D6A4F" stroke-width="2" fill="none" stroke-linecap="round">
+        <animate attributeName="d" values="M258 80 C240 122 262 162 248 202 C234 242 256 282 242 322;M258 80 C245 125 260 158 250 202 C240 246 254 280 244 322;M258 80 C240 122 262 162 248 202 C234 242 256 282 242 322" dur="5.5s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Scissors SVG -->
+      <g transform="translate(155, 168) scale(1.1)" opacity="0.85">
+        <!-- Left blade -->
+        <path d="M45 55 C42 40 30 25 20 18 C15 15 8 14 5 18 C2 22 4 28 8 32 C14 38 24 40 30 48 L45 55Z" fill="#2D6A4F"/>
+        <!-- Left handle ring -->
+        <circle cx="10" cy="20" r="9" stroke="#2D6A4F" stroke-width="2.5" fill="none"/>
+        <!-- Right blade -->
+        <path d="M45 55 C42 70 30 85 20 92 C15 95 8 96 5 92 C2 88 4 82 8 78 C14 72 24 70 30 62 L45 55Z" fill="#52B788"/>
+        <!-- Right handle ring -->
+        <circle cx="10" cy="90" r="9" stroke="#52B788" stroke-width="2.5" fill="none"/>
+        <!-- Screw -->
+        <circle cx="45" cy="55" r="4" fill="#1A1612"/>
+        <!-- Right extended blade -->
+        <path d="M45 55 L90 38" stroke="#52B788" stroke-width="3" stroke-linecap="round"/>
+        <path d="M45 55 L90 72" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <!-- Floating dots -->
+      <circle cx="100" cy="150" r="3" fill="#2D6A4F" opacity="0.4">
+        <animate attributeName="cy" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="310" cy="180" r="2" fill="#52B788" opacity="0.5">
+        <animate attributeName="cy" values="180;170;180" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="320" cy="250" r="4" fill="#2D6A4F" opacity="0.3">
+        <animate attributeName="cy" values="250;260;250" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="85" cy="280" r="3" fill="#52B788" opacity="0.4">
+        <animate attributeName="cy" values="280;270;280" dur="5s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Strzyżenie damskie</span> · <span>Barber Shop</span> · <span>Koloryzacja</span> · <span>Air Touch</span> · <span>Laminacja</span> · <span>Botox włosów</span> · <span>Katowice</span> · ul. Wojciecha 3 ·
+    <span>Strzyżenie damskie</span> · <span>Barber Shop</span> · <span>Koloryzacja</span> · <span>Air Touch</span> · <span>Laminacja</span> · <span>Botox włosów</span> · <span>Katowice</span> · ul. Wojciecha 3 ·
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="uslugi" class="services">
+  <p class="section-label reveal">02 / Usługi</p>
+  <h2 class="section-title reveal reveal-delay-1">Pełna oferta<br><em>naszego salonu</em></h2>
+  <div class="services-tabs reveal reveal-delay-2">
+    <button class="tab-btn active" onclick="switchTab('damskie',this)">Damskie</button>
+    <button class="tab-btn" onclick="switchTab('meskie',this)">Barber</button>
+    <button class="tab-btn" onclick="switchTab('kolor',this)">Koloryzacja</button>
+    <button class="tab-btn" onclick="switchTab('zabiegi',this)">Zabiegi</button>
+  </div>
+
+  <div id="damskie" class="tab-panel active">
+    <div class="price-list">
+      <div class="price-item"><span class="price-name">Strzyżenie + modelowanie (krótkie)</span><span class="price-val">od 80 zł</span></div>
+      <div class="price-item"><span class="price-name">Strzyżenie + modelowanie (średnie)</span><span class="price-val">od 90 zł</span></div>
+      <div class="price-item"><span class="price-name">Strzyżenie z modelowaniem (długie)</span><span class="price-val">od 100 zł</span></div>
+      <div class="price-item"><span class="price-name">Grzywka</span><span class="price-val">30 zł</span></div>
+      <div class="price-item"><span class="price-name">Modelowanie (krótkie)</span><span class="price-val">55 zł</span></div>
+      <div class="price-item"><span class="price-name">Modelowanie (średnie)</span><span class="price-val">od 65 zł</span></div>
+      <div class="price-item"><span class="price-name">Modelowanie / prostowanie (długie)</span><span class="price-val">75 zł</span></div>
+    </div>
+  </div>
+
+  <div id="meskie" class="tab-panel">
+    <div class="price-list">
+      <div class="price-item"><span class="price-name">Strzyżenie męskie klasyczne</span><span class="price-val">od 60 zł</span></div>
+      <div class="price-item"><span class="price-name">Strzyżenie męskie maszynką</span><span class="price-val">od 50 zł</span></div>
+      <div class="price-item"><span class="price-name">Strzyżenie brody</span><span class="price-val">od 55 zł</span></div>
+      <div class="price-item"><span class="price-name">Combo (włosy + broda)</span><span class="price-val">110 zł</span></div>
+    </div>
+  </div>
+
+  <div id="kolor" class="tab-panel">
+    <div class="price-list">
+      <div class="price-item"><span class="price-name">Koloryzacja jednolita</span><span class="price-val">od 180 zł</span></div>
+      <div class="price-item"><span class="price-name">Koloryzacja + refleksy</span><span class="price-val">od 240 zł</span></div>
+      <div class="price-item"><span class="price-name">Pasemka</span><span class="price-val">od 210 zł</span></div>
+      <div class="price-item"><span class="price-name">Dekoloryzacja</span><span class="price-val">od 270 zł</span></div>
+      <div class="price-item"><span class="price-name">Air Touch</span><span class="price-val">od 600 zł</span></div>
+      <div class="price-item"><span class="price-name">Trwała ondulacja</span><span class="price-val">od 190 zł</span></div>
+      <div class="price-item"><span class="price-name">Złote proteiny – ampułka Diana</span><span class="price-val">od 170 zł</span></div>
+    </div>
+  </div>
+
+  <div id="zabiegi" class="tab-panel">
+    <div class="price-list">
+      <div class="price-item"><span class="price-name">Botox Diana</span><span class="price-val">od 260 zł</span></div>
+      <div class="price-item"><span class="price-name">Rekonstrukcja / Regeneracja Diana</span><span class="price-val">od 250 zł</span></div>
+      <div class="price-item"><span class="price-name">Laminacja włosów Diana</span><span class="price-val">od 180 zł</span></div>
+      <div class="price-item"><span class="price-name">Lifting Insta Lift Diana</span><span class="price-val">od 180 zł</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers">
+  <div class="number-item reveal">
+    <span class="number-big">4,9★</span>
+    <span class="number-label">Średnia ocen Booksy</span>
+  </div>
+  <div class="number-item reveal reveal-delay-1">
+    <span class="number-big">331</span>
+    <span class="number-label">Zadowolonych klientów</span>
+  </div>
+  <div class="number-item reveal reveal-delay-2">
+    <span class="number-big">2w1</span>
+    <span class="number-label">Fryzjer & Barber Shop</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-visual reveal">
+    <svg class="about-svg" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Geometric composition -->
+      <rect x="40" y="40" width="280" height="280" stroke="#2D6A4F" stroke-width="0.5" opacity="0.3"/>
+      <rect x="70" y="70" width="220" height="220" stroke="#2D6A4F" stroke-width="0.5" opacity="0.2"/>
+      <!-- Main circle -->
+      <circle cx="180" cy="180" r="100" fill="#2D6A4F" opacity="0.08"/>
+      <circle cx="180" cy="180" r="100" stroke="#2D6A4F" stroke-width="1.5" opacity="0.4"/>
+      <!-- Comb illustration -->
+      <rect x="130" y="155" width="100" height="8" rx="2" fill="#2D6A4F" opacity="0.7"/>
+      <rect x="134" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="144" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="154" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="164" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="174" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="184" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="194" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="204" y="163" width="6" height="22" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <rect x="214" y="163" width="6" height="18" rx="1" fill="#2D6A4F" opacity="0.5"/>
+      <!-- Decorative lines -->
+      <line x1="40" y1="180" x2="80" y2="180" stroke="#52B788" stroke-width="1" opacity="0.5"/>
+      <line x1="280" y1="180" x2="320" y2="180" stroke="#52B788" stroke-width="1" opacity="0.5"/>
+      <line x1="180" y1="40" x2="180" y2="80" stroke="#52B788" stroke-width="1" opacity="0.5"/>
+      <line x1="180" y1="280" x2="180" y2="320" stroke="#52B788" stroke-width="1" opacity="0.5"/>
+      <!-- Corner marks -->
+      <path d="M40 60 L40 40 L60 40" stroke="#2D6A4F" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <path d="M300 40 L320 40 L320 60" stroke="#2D6A4F" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <path d="M40 300 L40 320 L60 320" stroke="#2D6A4F" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <path d="M300 320 L320 320 L320 300" stroke="#2D6A4F" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <!-- Rotating element -->
+      <circle cx="180" cy="180" r="130" stroke="#2D6A4F" stroke-width="0.5" stroke-dasharray="4 12" opacity="0.2">
+        <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="30s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+  <div class="about-text">
+    <p class="section-label reveal">03 / O nas</p>
+    <h2 class="section-title reveal reveal-delay-1">Doświadczenie,<br><em>które czuć</em></h2>
+    <p class="about-body reveal reveal-delay-2">Studio Emilia to miejsce, gdzie każdy klient jest traktowany indywidualnie. Łączymy pasję do fryzjerstwa z ciągłym doskonaleniem umiejętności.</p>
+    <p class="about-body reveal reveal-delay-2">Oferujemy pełen zakres usług — od klasycznych cięć damskich i barberskich po zaawansowane zabiegi pielęgnacyjne marki Diana.</p>
+    <div class="about-detail reveal reveal-delay-3">
+      <span class="about-detail-icon">📍</span>
+      <div>
+        <p class="about-detail-label">Adres</p>
+        <p class="about-detail-text">ul. Wojciecha 3, 40-474 Katowice · Piętro G, Carrefour Market</p>
+      </div>
+    </div>
+    <div class="about-detail reveal reveal-delay-3">
+      <span class="about-detail-icon">🕐</span>
+      <div>
+        <p class="about-detail-label">Godziny otwarcia</p>
+        <p class="about-detail-text">Pn–Pt: 09:00–17:00 · Sobota: 08:00–13:00 · Nd: zamknięte</p>
+      </div>
+    </div>
+    <div class="about-detail reveal reveal-delay-3">
+      <span class="about-detail-icon">📞</span>
+      <div>
+        <p class="about-detail-label">Kontakt</p>
+        <p class="about-detail-text">
+          <a href="tel:322015206">32 201 52 06</a> ·
+          <a href="mailto:studioemilia@op.pl">studioemilia@op.pl</a> ·
+          <a href="https://m.facebook.com/pages/category/Hair-Salon/Studio-Emilia-529885343815828/" target="_blank">Facebook</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="opinie" class="reviews">
+  <p class="section-label reveal">04 / Opinie</p>
+  <h2 class="section-title reveal reveal-delay-1">Co mówią<br><em>klienci</em></h2>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-accent"></div>
+      <p class="review-text">„Jestem zadowolona z pani Karoliny. Profesjonalne podejście i świetny efekt końcowy."</p>
+      <p class="review-author">Iwona K. · Klientka</p>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-accent"></div>
+      <p class="review-text">„Polecam Studio Emilia każdemu. Miła atmosfera i efekty, które mówią same za siebie."</p>
+      <p class="review-author">Maria Z. · Klientka</p>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-accent"></div>
+      <p class="review-text">„Świetne miejsce, zawsze wychodzę zadowolona i wracam regularnie."</p>
+      <p class="review-author">Paulinka P. · Klientka</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section style="height:420px;background:#1A1612;position:relative;overflow:hidden;">
+  <iframe
+    src="https://maps.google.com/maps?q=ul.+Wojciecha+3,+40-474+Katowice&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="100%"
+    style="border:0;display:block;filter:grayscale(20%) contrast(1.05);"
+    allowfullscreen loading="lazy">
+  </iframe>
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 3rem;background:linear-gradient(to top,rgba(26,22,18,0.9),transparent);display:flex;justify-content:space-between;align-items:flex-end;">
+    <div>
+      <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.3rem;">Znajdź nas</p>
+      <p style="font-family:Cormorant,serif;font-size:1.3rem;color:#FDFCFA;font-weight:300;">ul. Wojciecha 3, Katowice · Carrefour Market</p>
+    </div>
+    <a href="https://maps.google.com/?q=ul.+Wojciecha+3,+40-474+Katowice" target="_blank"
+       style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:#FDFCFA;text-decoration:none;border:1px solid rgba(253,252,250,0.3);padding:0.6rem 1.4rem;transition:border-color .2s;"
+       onmouseover="this.style.borderColor='var(--accent2)'"
+       onmouseout="this.style.borderColor='rgba(253,252,250,0.3)'">
+      Otwórz w Mapach →
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="kontakt" class="cta">
+  <div class="cta-bg-circle" style="width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="cta-bg-circle" style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <h2 class="cta-title">Umów się<br><em>już dziś</em></h2>
+  <p class="cta-sub">Rezerwacja online w kilka sekund — bez czekania, bez telefonu.</p>
+  <a href="https://booksy.com/pl-pl/85546_studio-emilia-fryzjer-barber-shop_fryzjer_11597_katowice" target="_blank" class="cta-btn">Zarezerwuj przez Booksy</a>
+  <span class="cta-phone">Wolisz zadzwonić? <a href="tel:322015206">32 201 52 06</a></span>
+</section>
+
+<footer>
+  <span>© 2025 Studio Emilia — Fryzjer & Barber Shop Katowice</span>
+  <span>ul. Wojciecha 3 · <a href="tel:322015206">32 201 52 06</a> · <a href="https://m.facebook.com/pages/category/Hair-Salon/Studio-Emilia-529885343815828/" target="_blank">Facebook</a></span>
+</footer>
+
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
